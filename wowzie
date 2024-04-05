@@ -41,7 +41,7 @@
         end)
         function looptable:Disable()
             if table.find(looptable, guid) then
-            table.remove(loops, guid)
+            table.remove(looptable, table.find(loops, guid))
             else
                 throwerr("Loop:Disable (LOOP ALREADY TERMINATED)")
             end
@@ -102,10 +102,10 @@
     end
     function wowzie:EnableRemote(remote)
         if typ(remote) == "string" and table.find(DisabledRemoteNames, remote) then 
-            table.remove(DisabledRemoteNames, remote)
+            table.remove(DisabledRemoteNames, table.find(DisabledRemoteNames, remote))
         end
         if typ(remote) == "instance" and remote:IsA("RemoteEvent") and table.find(DisabledRemotes, remote) then
-            table.remove(DisabledRemotes, remote)
+            table.remove(DisabledRemotes, table.find(DisabledRemotes, remote))
         end
     end
 
@@ -136,7 +136,7 @@
         Items[label] = part
         local a = {}
         function a:DisableEsp()
-            table.remove(Items, label)
+            table.remove(Items, table.find(Items, label))
             label:Destroy()
         end
         return a
