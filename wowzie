@@ -1,0 +1,160 @@
+    repeat wait() until game:IsLoaded()
+    
+    local wowzie = {}
+    local DisabledRemotes = {}
+    local DisabledRemoteNames = {}
+    
+    
+    --[[
+        // SERVICES \\
+    ]]--
+    local Players = game:GetService("Players")
+    local RunService = game:GetService("RunService")
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local HttpService = game:GetService("HttpService")
+    --[[
+        // MISC \\
+    --]]
+    local Camera = workspace.CurrentCamera
+    local 
+    --[[
+        // API START \\
+    --]]
+    
+    function throwerr(err)
+        if not IGNOREERRORS then
+        warn("WOWZIE API ERROR: "..err)
+        end
+    end
+    
+    function typ(a)
+            return typeof(a):lower()
+    end
+    local loops = {} 
+    function wowzie:Loop(func, delay)
+        local looptable = {}
+        spawn(function()
+        if not func then throwerr("Loop (NO FUNCTION)") return end
+        if not typeof(func):lower() == "function" then throwerr("Loop (FUNCTION IS NOT A FUNCTION)") return end
+        local guid = HttpService:GenerateGUID()
+        spawn(function() while wait(delay or 0) and loops[guid] do xpcall(func, throwerr) end end)
+        end)
+        function looptable:Disable()
+            if table.find(looptable, guid) then
+            table.remove(loops, guid)
+            else
+                throwerr("Loop:Disable (LOOP ALREADY TERMINATED)")
+            end
+        end
+        return looptable
+    end
+    function wowzie:GetCharacter(player)
+        local plr = player or game.Players.LocalPlayer
+        return plr.Character
+    end
+    function wowzie:HasCharacter(player)
+        local plr = player or game.Players.LocalPlayer
+        if plr.Character and plr.Character.PrimaryPart then 
+            return true
+        end
+        return false
+    end
+    function wowzie:UpdateVelocity(velo)
+        if typ(velo) ~= "vector3" then throwerr("UpdateVelocity (NOT VECTOR3)") return end 
+        if wowzie:HasCharacter() then
+            wowzie:GetCharacter().PrimaryPart.Velocity = velo
+        else
+            throwerr("UpdateVelocity (NO CHARACTER)")
+            return false
+        end
+        return true
+    end
+    function wowzie:UpdatePosition(position)
+        local cf = typ(position) == "cframe" and true or typ(position) == "vector3" and false
+        if not position then throwerr("UpdatePosition (POSITION IS NIL)") return false end
+        if wowzie:HasCharacter() then
+            wowzie:GetCharacter().PrimaryPart.CFrame = cf and position or CFrame.new(position)
+        else
+            throwerr("UpdatePosition (NO CHARACTER)")
+            return false
+        end
+        return true
+    end
+    spawn(function()
+    repeat wait() print(#DisabledRemoteNames) until #DisabledRemoteNames ~= 0 or #DisabledRemotes ~= 0
+    print("init namecall")
+    local namecall
+    namecall = hookmetamethod(game, "__namecall", function(self, ...)
+        local method = getnamecallmethod():lower()
+        if self and method and method == "fireserver" and table.find(DisabledRemoteNames, tostring(self)) or table.find(DisabledRemotes, self) then
+        return nil
+        end
+        return namecall(self, ...)
+    end)
+    end)
+    function wowzie:DisableRemote(remote)
+        if typ(remote) == "string" then 
+            table.insert(DisabledRemoteNames, remote)
+        end
+        if typ(remote) == "instance" and remote:IsA("RemoteEvent") then
+            table.insert(DisabledRemotes, remote)
+        end
+    end
+    function wowzie:EnableRemote(remote)
+        if typ(remote) == "string" and table.find(DisabledRemoteNames, remote) then 
+            table.remove(DisabledRemoteNames, remote)
+        end
+        if typ(remote) == "instance" and remote:IsA("RemoteEvent") and table.find(DisabledRemotes, remote) then
+            table.remove(DisabledRemotes, remote)
+        end
+    end
+
+    function wowzie:OnInstanceAdded(func, folder)
+        if not typ(func) == "function" then throwerr("OnInstanceAdded (NO FUNCTION)") return end
+        local fold = folder or workspace
+        fold.ChildAdded:Connect(func)
+        -- lazy so defaults to workspace :DDD
+    end
+    
+    local Items = {}
+    game.RunService.RenderStepped:Connect(function()
+        for label, part in pairs(Items) do 
+            local pos, vis = Camera:WorldToViewportPoint(part.Position)
+            if vis then 
+                label.Position = Vector2.new(pos.X, pos.Y)
+                label.Visible = true
+            else
+                label.Visible = false
+            end
+        end
+    end)
+    
+    function wowzie:EspPart(part, name)
+        if typ(part) ~= "instance" then throwerr("EspPart (PART IS NOT AN INSTANCE)") return end
+        local label = Drawing.new("Text")
+        label.Text = name or part.Parent:IsA("Model") and part.Parent.Name or part.Name
+        Items[label] = part
+        local a = {}
+        function a:DisableEsp()
+            table.remove(Items, label)
+            label:Destroy()
+        end
+        return a
+    end
+    function wowzie:Notify(Title, Text, Duration)
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = Title;
+        Text = Text;
+        Duration = Duration;
+        })
+    end
+    
+    getgenv().wowzie = wowzie
+    
+    for i, v in pairs(wowzie) do 
+    if not getgenv()[i] then 
+    getgenv()[i] = v
+    end
+    end
+    
+    return wowzie
