@@ -364,6 +364,7 @@ Converted["Script2"].Position = UDim2.new(0.888888836, 0, 1.02631581, 0)
 Converted["Script2"].Size = UDim2.new(0, 122, 0, 122)
 Converted["Script2"].Name = "Script"
 Converted["Script2"].Parent = Converted["List1"]
+Converted["Script2"].Visible = false
 
 Converted["Image2"].Image = "rbxassetid://82353236264290"
 Converted["Image2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
