@@ -1,0 +1,677 @@
+local UpdatesText = 
+[[<font weight="heavy" size="40">Change Logs</font>
+<font color="rgb(60, 255, 0)">[+] Added New Loader          </font>
+<font color="rgb(60, 255, 0)">[+] Added KIKI Hub : External </font>
+<font color="rgb(60, 255, 0)">[+] Added KIKI Hub : Lite     </font>
+]]
+local Descriptions = {}
+Descriptions["KIKI Hub"] = [[A simple general purpose cheat meant for progression/raging
+
+Features Include Fly, Basic ESP, Backattach/Killaura, Moderator/Illu Notifier, and Extra Exploits
+
+Made To Be Used On New Accounts, Not For Ganking
+]]
+
+local Converted = {
+	["ScreenGui"] = Instance.new("ScreenGui");
+	["Select"] = Instance.new("Frame");
+	["ImageLabel"] = Instance.new("ImageLabel");
+	["UICorner"] = Instance.new("UICorner");
+	["CanvasGroup"] = Instance.new("CanvasGroup");
+	["Tabs"] = Instance.new("Frame");
+	["List"] = Instance.new("Frame");
+	["UIListLayout"] = Instance.new("UIListLayout");
+	["Products"] = Instance.new("TextButton");
+	["UICorner1"] = Instance.new("UICorner");
+	["ImageLabel1"] = Instance.new("ImageLabel");
+	["Updates"] = Instance.new("TextButton");
+	["ImageLabel2"] = Instance.new("ImageLabel");
+	["Seperator"] = Instance.new("Frame");
+	["TabHolder"] = Instance.new("Frame");
+	["ProductsTab"] = Instance.new("Frame");
+	["List1"] = Instance.new("Frame");
+	["Script"] = Instance.new("Frame");
+	["Image"] = Instance.new("ImageLabel");
+	["UIStroke"] = Instance.new("UIStroke");
+	["UICorner2"] = Instance.new("UICorner");
+	["Background"] = Instance.new("Frame");
+	["UICorner3"] = Instance.new("UICorner");
+	["Label"] = Instance.new("TextLabel");
+	["UIStroke1"] = Instance.new("UIStroke");
+	["TextButton"] = Instance.new("TextButton");
+	["Script1"] = Instance.new("Frame");
+	["Image1"] = Instance.new("ImageLabel");
+	["UIStroke2"] = Instance.new("UIStroke");
+	["UICorner4"] = Instance.new("UICorner");
+	["Background1"] = Instance.new("Frame");
+	["UICorner5"] = Instance.new("UICorner");
+	["Label1"] = Instance.new("TextLabel");
+	["UIStroke3"] = Instance.new("UIStroke");
+	["TextButton1"] = Instance.new("TextButton");
+	["UIGridLayout"] = Instance.new("UIGridLayout");
+	["Script2"] = Instance.new("Frame");
+	["Image2"] = Instance.new("ImageLabel");
+	["UIStroke4"] = Instance.new("UIStroke");
+	["UICorner6"] = Instance.new("UICorner");
+	["Background2"] = Instance.new("Frame");
+	["UICorner7"] = Instance.new("UICorner");
+	["Label2"] = Instance.new("TextLabel");
+	["UIStroke5"] = Instance.new("UIStroke");
+	["TextButton2"] = Instance.new("TextButton");
+	["Load"] = Instance.new("Frame");
+	["ImageLabel3"] = Instance.new("ImageLabel");
+	["TextButton3"] = Instance.new("TextButton");
+	["Description"] = Instance.new("TextLabel");
+	["UpdatesTab"] = Instance.new("Frame");
+	["Load1"] = Instance.new("Frame");
+	["Content"] = Instance.new("TextLabel");
+	["UICorner8"] = Instance.new("UICorner");
+	["UIStroke6"] = Instance.new("UIStroke");
+	["UIGradient"] = Instance.new("UIGradient");
+	["Load2"] = Instance.new("Frame");
+	["UIStroke7"] = Instance.new("UIStroke");
+	["UIGradient1"] = Instance.new("UIGradient");
+	["UICorner9"] = Instance.new("UICorner");
+	["TextLabel"] = Instance.new("TextLabel");
+	["LoadingIcon"] = Instance.new("ImageLabel");
+	["ImageLabel4"] = Instance.new("ImageLabel");
+	["UICorner10"] = Instance.new("UICorner");
+}
+
+Converted["ScreenGui"].Enabled = true
+Converted["ScreenGui"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Converted["ScreenGui"].Parent = game:GetService("CoreGui")
+
+Converted["Select"].AnchorPoint = Vector2.new(0.5, 0.5)
+Converted["Select"].BackgroundColor3 = Color3.fromRGB(53.000004440546036, 53.000004440546036, 53.000004440546036)
+Converted["Select"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Select"].BorderSizePixel = 0
+Converted["Select"].Position = UDim2.new(0.5, 0, 0.5, 0)
+Converted["Select"].Size = UDim2.new(0, 750, 0, 400)
+Converted["Select"].Name = "Select"
+Converted["Select"].Parent = Converted["ScreenGui"]
+Converted["Select"].Visible = false
+
+Converted["ImageLabel"].Image = "rbxassetid://10980958752"
+Converted["ImageLabel"].ScaleType = Enum.ScaleType.Crop
+Converted["ImageLabel"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["ImageLabel"].BackgroundTransparency = 1
+Converted["ImageLabel"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["ImageLabel"].BorderSizePixel = 0
+Converted["ImageLabel"].Size = UDim2.new(1, 0, 1, 0)
+Converted["ImageLabel"].ZIndex = 0
+Converted["ImageLabel"].Parent = Converted["Select"]
+
+Converted["UICorner"].Parent = Converted["ImageLabel"]
+
+Converted["CanvasGroup"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["CanvasGroup"].BackgroundTransparency = 1
+Converted["CanvasGroup"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["CanvasGroup"].BorderSizePixel = 0
+Converted["CanvasGroup"].Size = UDim2.new(1, 0, 1, 0)
+Converted["CanvasGroup"].Parent = Converted["Select"]
+Converted["CanvasGroup"].GroupTransparency = 1
+
+Converted["Tabs"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Tabs"].BackgroundTransparency = 1
+Converted["Tabs"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Tabs"].BorderSizePixel = 0
+Converted["Tabs"].Size = UDim2.new(0.244666666, 0, 1, 0)
+Converted["Tabs"].Name = "Tabs"
+Converted["Tabs"].Parent = Converted["CanvasGroup"]
+
+Converted["List"].AnchorPoint = Vector2.new(0.5, 0.5)
+Converted["List"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["List"].BackgroundTransparency = 1
+Converted["List"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["List"].BorderSizePixel = 0
+Converted["List"].Position = UDim2.new(0.5, 0, 0.5, 0)
+Converted["List"].Size = UDim2.new(0.899999976, 0, 0.949999988, 0)
+Converted["List"].Name = "List"
+Converted["List"].Parent = Converted["Tabs"]
+
+Converted["UIListLayout"].Padding = UDim.new(0, 5)
+Converted["UIListLayout"].SortOrder = Enum.SortOrder.LayoutOrder
+Converted["UIListLayout"].Parent = Converted["List"]
+
+Converted["Products"].Font = Enum.Font.Roboto
+Converted["Products"].Text = "Products"
+Converted["Products"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Products"].TextSize = 22
+Converted["Products"].AnchorPoint = Vector2.new(0.5, 0)
+Converted["Products"].BackgroundColor3 = Color3.fromRGB(102.00000911951065, 0, 255)
+Converted["Products"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Products"].BorderSizePixel = 0
+Converted["Products"].Size = UDim2.new(1, 0, 0.100000001, 0)
+Converted["Products"].Name = "Products"
+Converted["Products"].AutoButtonColor = false
+Converted["Products"].Parent = Converted["List"]
+
+Converted["UICorner1"].CornerRadius = UDim.new(0, 2)
+Converted["UICorner1"].Parent = Converted["Products"]
+
+Converted["ImageLabel1"].Image = "rbxassetid://124620632231839"
+Converted["ImageLabel1"].ScaleType = Enum.ScaleType.Tile
+Converted["ImageLabel1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["ImageLabel1"].BackgroundTransparency = 1
+Converted["ImageLabel1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["ImageLabel1"].BorderSizePixel = 0
+Converted["ImageLabel1"].Position = UDim2.new(0.0199999996, 0, 0.100000001, 0)
+Converted["ImageLabel1"].Size = UDim2.new(0.150000006, 0, 0.75, 0)
+Converted["ImageLabel1"].Parent = Converted["Products"]
+
+Converted["Updates"].Font = Enum.Font.Roboto
+Converted["Updates"].Text = "Updates"
+Converted["Updates"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Updates"].TextSize = 22
+Converted["Updates"].AnchorPoint = Vector2.new(0.5, 0)
+Converted["Updates"].BackgroundColor3 = Color3.fromRGB(102.00000911951065, 0, 255)
+Converted["Updates"].BackgroundTransparency = 1
+Converted["Updates"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Updates"].BorderSizePixel = 0
+Converted["Updates"].Size = UDim2.new(1, 0, 0.100000001, 0)
+Converted["Updates"].Name = "Updates"
+Converted["Updates"].AutoButtonColor = false
+Converted["Updates"].Parent = Converted["List"]
+
+Converted["ImageLabel2"].Image = "rbxassetid://13492315901"
+Converted["ImageLabel2"].ScaleType = Enum.ScaleType.Fit
+Converted["ImageLabel2"].TileSize = UDim2.new(0.75, 0, 0.75, 0)
+Converted["ImageLabel2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["ImageLabel2"].BackgroundTransparency = 1
+Converted["ImageLabel2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["ImageLabel2"].BorderSizePixel = 0
+Converted["ImageLabel2"].Position = UDim2.new(0.0199999996, 0, 0.100000001, 0)
+Converted["ImageLabel2"].Size = UDim2.new(0.150000006, 0, 0.75, 0)
+Converted["ImageLabel2"].Parent = Converted["Updates"]
+
+Converted["Seperator"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Seperator"].BackgroundTransparency = 0.699999988079071
+Converted["Seperator"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Seperator"].BorderSizePixel = 0
+Converted["Seperator"].Position = UDim2.new(1, 0, 0, 0)
+Converted["Seperator"].Size = UDim2.new(0, 1, 1, 0)
+Converted["Seperator"].Name = "Seperator"
+Converted["Seperator"].Parent = Converted["Tabs"]
+
+Converted["TabHolder"].AnchorPoint = Vector2.new(0.5, 0.5)
+Converted["TabHolder"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["TabHolder"].BackgroundTransparency = 1
+Converted["TabHolder"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["TabHolder"].BorderSizePixel = 0
+Converted["TabHolder"].Position = UDim2.new(0.680000007, 0, 0.5, 0)
+Converted["TabHolder"].Size = UDim2.new(0.649999976, 0, 1, 0)
+Converted["TabHolder"].Name = "TabHolder"
+Converted["TabHolder"].Parent = Converted["CanvasGroup"]
+
+Converted["ProductsTab"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["ProductsTab"].BackgroundTransparency = 1
+Converted["ProductsTab"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["ProductsTab"].BorderSizePixel = 0
+Converted["ProductsTab"].Size = UDim2.new(1, 0, 1, 0)
+Converted["ProductsTab"].Visible = true
+Converted["ProductsTab"].Name = "ProductsTab"
+Converted["ProductsTab"].Parent = Converted["TabHolder"]
+
+Converted["List1"].AnchorPoint = Vector2.new(0.5, 0.5)
+Converted["List1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["List1"].BackgroundTransparency = 1
+Converted["List1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["List1"].BorderSizePixel = 0
+Converted["List1"].Position = UDim2.new(0.425128192, 0, 0.5, 0)
+Converted["List1"].Size = UDim2.new(1, 0, 0.949999988, 0)
+Converted["List1"].Name = "List"
+Converted["List1"].Parent = Converted["ProductsTab"]
+
+Converted["Script"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Script"].BackgroundTransparency = 1
+Converted["Script"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Script"].BorderSizePixel = 0
+Converted["Script"].Position = UDim2.new(0.888888836, 0, 1.02631581, 0)
+Converted["Script"].Size = UDim2.new(0, 122, 0, 122)
+Converted["Script"].Name = "Script"
+Converted["Script"].Parent = Converted["List1"]
+
+Converted["Image"].Image = "rbxassetid://82353236264290"
+Converted["Image"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Image"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Image"].BorderSizePixel = 0
+Converted["Image"].Size = UDim2.new(1, 0, 1, 0)
+Converted["Image"].Name = "Image"
+Converted["Image"].Parent = Converted["Script"]
+
+Converted["UIStroke"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["UIStroke"].Color = Color3.fromRGB(255, 255, 255)
+Converted["UIStroke"].Parent = Converted["Image"]
+
+Converted["UICorner2"].Parent = Converted["Image"]
+
+Converted["Background"].BackgroundColor3 = Color3.fromRGB(56.0000042617321, 56.0000042617321, 56.0000042617321)
+Converted["Background"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Background"].BorderSizePixel = 0
+Converted["Background"].Position = UDim2.new(0, 0, 0.200000003, 0)
+Converted["Background"].Size = UDim2.new(1, 0, 1, 0)
+Converted["Background"].ZIndex = 0
+Converted["Background"].Name = "Background"
+Converted["Background"].Parent = Converted["Script"]
+
+Converted["UICorner3"].Parent = Converted["Background"]
+
+Converted["Label"].Font = Enum.Font.SourceSans
+Converted["Label"].Text = "KIKI Hub"
+Converted["Label"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Label"].TextSize = 20
+Converted["Label"].TextWrapped = true
+Converted["Label"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Label"].BackgroundTransparency = 1
+Converted["Label"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Label"].BorderSizePixel = 0
+Converted["Label"].Position = UDim2.new(0, 0, 0.800000012, 0)
+Converted["Label"].Size = UDim2.new(1, 0, 0.200000003, 0)
+Converted["Label"].Name = "Label"
+Converted["Label"].Parent = Converted["Background"]
+
+Converted["UIStroke1"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["UIStroke1"].Color = Color3.fromRGB(255, 255, 255)
+Converted["UIStroke1"].Parent = Converted["Background"]
+
+Converted["TextButton"].Font = Enum.Font.SourceSans
+Converted["TextButton"].Text = ""
+Converted["TextButton"].TextColor3 = Color3.fromRGB(0, 0, 0)
+Converted["TextButton"].TextSize = 14
+Converted["TextButton"].AutoButtonColor = false
+Converted["TextButton"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["TextButton"].BackgroundTransparency = 1
+Converted["TextButton"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["TextButton"].BorderSizePixel = 0
+Converted["TextButton"].Size = UDim2.new(1, 0, 1, 0)
+Converted["TextButton"].Parent = Converted["Script"]
+
+Converted["Script1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Script1"].BackgroundTransparency = 1
+Converted["Script1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Script1"].BorderSizePixel = 0
+Converted["Script1"].Position = UDim2.new(0.888888836, 0, 1.02631581, 0)
+Converted["Script1"].Size = UDim2.new(0, 122, 0, 122)
+Converted["Script1"].Name = "Script"
+Converted["Script1"].Parent = Converted["List1"]
+
+Converted["Image1"].Image = "rbxassetid://82353236264290"
+Converted["Image1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Image1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Image1"].BorderSizePixel = 0
+Converted["Image1"].Size = UDim2.new(1, 0, 1, 0)
+Converted["Image1"].Name = "Image"
+Converted["Image1"].Parent = Converted["Script1"]
+
+Converted["UIStroke2"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["UIStroke2"].Color = Color3.fromRGB(255, 255, 255)
+Converted["UIStroke2"].Parent = Converted["Image1"]
+
+Converted["UICorner4"].Parent = Converted["Image1"]
+
+Converted["Background1"].BackgroundColor3 = Color3.fromRGB(56.0000042617321, 56.0000042617321, 56.0000042617321)
+Converted["Background1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Background1"].BorderSizePixel = 0
+Converted["Background1"].Position = UDim2.new(0, 0, 0.200000003, 0)
+Converted["Background1"].Size = UDim2.new(1, 0, 1, 0)
+Converted["Background1"].ZIndex = 0
+Converted["Background1"].Name = "Background"
+Converted["Background1"].Parent = Converted["Script1"]
+
+Converted["UICorner5"].Parent = Converted["Background1"]
+
+Converted["Label1"].Font = Enum.Font.SourceSans
+Converted["Label1"].Text = "KIKI Hub : Lite"
+Converted["Label1"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Label1"].TextSize = 20
+Converted["Label1"].TextWrapped = true
+Converted["Label1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Label1"].BackgroundTransparency = 1
+Converted["Label1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Label1"].BorderSizePixel = 0
+Converted["Label1"].Position = UDim2.new(0, 0, 0.800000012, 0)
+Converted["Label1"].Size = UDim2.new(1, 0, 0.200000003, 0)
+Converted["Label1"].Name = "Label"
+Converted["Label1"].Parent = Converted["Background1"]
+
+Converted["UIStroke3"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["UIStroke3"].Color = Color3.fromRGB(255, 255, 255)
+Converted["UIStroke3"].Parent = Converted["Background1"]
+
+Converted["TextButton1"].Font = Enum.Font.SourceSans
+Converted["TextButton1"].Text = ""
+Converted["TextButton1"].TextColor3 = Color3.fromRGB(0, 0, 0)
+Converted["TextButton1"].TextSize = 14
+Converted["TextButton1"].AutoButtonColor = false
+Converted["TextButton1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["TextButton1"].BackgroundTransparency = 1
+Converted["TextButton1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["TextButton1"].BorderSizePixel = 0
+Converted["TextButton1"].Size = UDim2.new(1, 0, 1, 0)
+Converted["TextButton1"].Parent = Converted["Script1"]
+
+Converted["UIGridLayout"].CellPadding = UDim2.new(0, 10, 0, 10)
+Converted["UIGridLayout"].CellSize = UDim2.new(0, 140, 0, 140)
+Converted["UIGridLayout"].SortOrder = Enum.SortOrder.LayoutOrder
+Converted["UIGridLayout"].Parent = Converted["List1"]
+
+Converted["Script2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Script2"].BackgroundTransparency = 1
+Converted["Script2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Script2"].BorderSizePixel = 0
+Converted["Script2"].Position = UDim2.new(0.888888836, 0, 1.02631581, 0)
+Converted["Script2"].Size = UDim2.new(0, 122, 0, 122)
+Converted["Script2"].Name = "Script"
+Converted["Script2"].Parent = Converted["List1"]
+
+Converted["Image2"].Image = "rbxassetid://82353236264290"
+Converted["Image2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Image2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Image2"].BorderSizePixel = 0
+Converted["Image2"].Size = UDim2.new(1, 0, 1, 0)
+Converted["Image2"].Name = "Image"
+Converted["Image2"].Parent = Converted["Script2"]
+
+Converted["UIStroke4"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["UIStroke4"].Color = Color3.fromRGB(255, 255, 255)
+Converted["UIStroke4"].Parent = Converted["Image2"]
+
+Converted["UICorner6"].Parent = Converted["Image2"]
+
+Converted["Background2"].BackgroundColor3 = Color3.fromRGB(56.0000042617321, 56.0000042617321, 56.0000042617321)
+Converted["Background2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Background2"].BorderSizePixel = 0
+Converted["Background2"].Position = UDim2.new(0, 0, 0.200000003, 0)
+Converted["Background2"].Size = UDim2.new(1, 0, 1, 0)
+Converted["Background2"].ZIndex = 0
+Converted["Background2"].Name = "Background"
+Converted["Background2"].Parent = Converted["Script2"]
+
+Converted["UICorner7"].Parent = Converted["Background2"]
+
+Converted["Label2"].Font = Enum.Font.SourceSans
+Converted["Label2"].Text = "KIKI Hub : External"
+Converted["Label2"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Label2"].TextSize = 20
+Converted["Label2"].TextWrapped = true
+Converted["Label2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Label2"].BackgroundTransparency = 1
+Converted["Label2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Label2"].BorderSizePixel = 0
+Converted["Label2"].Position = UDim2.new(0, 0, 0.800000012, 0)
+Converted["Label2"].Size = UDim2.new(1, 0, 0.200000003, 0)
+Converted["Label2"].Name = "Label"
+Converted["Label2"].Parent = Converted["Background2"]
+
+Converted["UIStroke5"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["UIStroke5"].Color = Color3.fromRGB(255, 255, 255)
+Converted["UIStroke5"].Parent = Converted["Background2"]
+
+Converted["TextButton2"].Font = Enum.Font.SourceSans
+Converted["TextButton2"].Text = ""
+Converted["TextButton2"].TextColor3 = Color3.fromRGB(0, 0, 0)
+Converted["TextButton2"].TextSize = 14
+Converted["TextButton2"].AutoButtonColor = false
+Converted["TextButton2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["TextButton2"].BackgroundTransparency = 1
+Converted["TextButton2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["TextButton2"].BorderSizePixel = 0
+Converted["TextButton2"].Size = UDim2.new(1, 0, 1, 0)
+Converted["TextButton2"].Parent = Converted["Script2"]
+
+Converted["Load"].AnchorPoint = Vector2.new(0.5, 0.5)
+Converted["Load"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Load"].BackgroundTransparency = 1
+Converted["Load"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Load"].BorderSizePixel = 0
+Converted["Load"].Position = UDim2.new(0.425128192, 0, 0.5, 0)
+Converted["Load"].Size = UDim2.new(1, 0, 0.949999988, 0)
+Converted["Load"].Visible = false
+Converted["Load"].Name = "Load"
+Converted["Load"].Parent = Converted["ProductsTab"]
+
+Converted["ImageLabel3"].Image = "rbxassetid://82353236264290"
+Converted["ImageLabel3"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["ImageLabel3"].BackgroundTransparency = 1
+Converted["ImageLabel3"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["ImageLabel3"].BorderSizePixel = 0
+Converted["ImageLabel3"].Size = UDim2.new(1, 0, 0.25, 0)
+Converted["ImageLabel3"].Parent = Converted["Load"]
+
+Converted["TextButton3"].Font = Enum.Font.SourceSans
+Converted["TextButton3"].Text = "Inject"
+Converted["TextButton3"].TextColor3 = Color3.fromRGB(202.0000183582306, 202.0000183582306, 202.0000183582306)
+Converted["TextButton3"].TextSize = 14
+Converted["TextButton3"].AutoButtonColor = false
+Converted["TextButton3"].AnchorPoint = Vector2.new(0.5, 0.5)
+Converted["TextButton3"].BackgroundColor3 = Color3.fromRGB(36.00000165402889, 36.00000165402889, 36.00000165402889)
+Converted["TextButton3"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["TextButton3"].BorderSizePixel = 0
+Converted["TextButton3"].Position = UDim2.new(0.819999993, 0, 0.75999999, 0)
+Converted["TextButton3"].Size = UDim2.new(0.300000012, 0, 0.349999994, 0)
+Converted["TextButton3"].Parent = Converted["ImageLabel3"]
+
+Converted["Description"].Font = Enum.Font.SourceSans
+Converted["Description"].RichText = true
+Converted["Description"].Text = "Expires: never\nStatus: Undetected"
+Converted["Description"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Description"].TextSize = 14
+Converted["Description"].TextXAlignment = Enum.TextXAlignment.Left
+Converted["Description"].TextYAlignment = Enum.TextYAlignment.Top
+Converted["Description"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Description"].BackgroundTransparency = 1
+Converted["Description"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Description"].BorderSizePixel = 0
+Converted["Description"].Position = UDim2.new(-3.7560099e-07, 0, 0.25, 0)
+Converted["Description"].Size = UDim2.new(1, 0, 0.75, 0)
+Converted["Description"].Name = "Description"
+Converted["Description"].Parent = Converted["Load"]
+
+Converted["UpdatesTab"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["UpdatesTab"].BackgroundTransparency = 1
+Converted["UpdatesTab"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["UpdatesTab"].BorderSizePixel = 0
+Converted["UpdatesTab"].Size = UDim2.new(1, 0, 1, 0)
+Converted["UpdatesTab"].Name = "UpdatesTab"
+Converted["UpdatesTab"].Parent = Converted["TabHolder"]
+Converted["UpdatesTab"].Visible = false
+
+Converted["Load1"].AnchorPoint = Vector2.new(0.5, 0.5)
+Converted["Load1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Load1"].BackgroundTransparency = 1
+Converted["Load1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Load1"].BorderSizePixel = 0
+Converted["Load1"].Position = UDim2.new(0.425128192, 0, 0.5, 0)
+Converted["Load1"].Size = UDim2.new(1, 0, 0.949999988, 0)
+Converted["Load1"].Name = "Load"
+Converted["Load1"].Parent = Converted["UpdatesTab"]
+
+Converted["Content"].Font = Enum.Font.SourceSans
+Converted["Content"].RichText = true
+Converted["Content"].Text = UpdatesText
+Converted["Content"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Content"].TextSize = 14
+Converted["Content"].TextXAlignment = Enum.TextXAlignment.Left
+Converted["Content"].TextYAlignment = Enum.TextYAlignment.Top
+Converted["Content"].AnchorPoint = Vector2.new(0.5, 0.5)
+Converted["Content"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["Content"].BackgroundTransparency = 1
+Converted["Content"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Content"].BorderSizePixel = 0
+Converted["Content"].Position = UDim2.new(0.5, 0, 0.5, 0)
+Converted["Content"].Size = UDim2.new(1, 0, 1, 0)
+Converted["Content"].Name = "Content"
+Converted["Content"].Parent = Converted["Load1"]
+
+Converted["UICorner8"].Parent = Converted["Select"]
+
+Converted["UIStroke6"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["UIStroke6"].Color = Color3.fromRGB(255, 255, 255)
+Converted["UIStroke6"].Parent = Converted["Select"]
+
+Converted["UIGradient"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(67.00000360608101, 67.00000360608101, 67.00000360608101))
+}
+Converted["UIGradient"].Rotation = 58
+Converted["UIGradient"].Parent = Converted["UIStroke6"]
+
+Converted["Load2"].AnchorPoint = Vector2.new(0.5, 0.5)
+Converted["Load2"].BackgroundColor3 = Color3.fromRGB(53.000004440546036, 53.000004440546036, 53.000004440546036)
+Converted["Load2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["Load2"].BorderSizePixel = 0
+Converted["Load2"].Position = UDim2.new(0.5, 0, 0.5, 0)
+Converted["Load2"].Size = UDim2.new(0, 500, 0, 200)
+Converted["Load2"].Visible = false
+Converted["Load2"].Name = "Load"
+Converted["Load2"].Parent = Converted["ScreenGui"]
+
+Converted["UIStroke7"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+Converted["UIStroke7"].Color = Color3.fromRGB(255, 255, 255)
+Converted["UIStroke7"].Parent = Converted["Load2"]
+
+Converted["UIGradient1"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(67.00000360608101, 67.00000360608101, 67.00000360608101))
+}
+Converted["UIGradient1"].Rotation = 58
+Converted["UIGradient1"].Parent = Converted["UIStroke7"]
+
+Converted["UICorner9"].Parent = Converted["Load2"]
+
+Converted["TextLabel"].Font = Enum.Font.Unknown
+Converted["TextLabel"].Text = "KIKI Hub is Loading..."
+Converted["TextLabel"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["TextLabel"].TextSize = 25
+Converted["TextLabel"].TextWrapped = true
+Converted["TextLabel"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["TextLabel"].BackgroundTransparency = 1
+Converted["TextLabel"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["TextLabel"].BorderSizePixel = 0
+Converted["TextLabel"].Size = UDim2.new(1, 0, 1, 0)
+Converted["TextLabel"].Parent = Converted["Load2"]
+
+Converted["LoadingIcon"].Image = "rbxassetid://82285050019288"
+Converted["LoadingIcon"].AnchorPoint = Vector2.new(0.5, 0.5)
+Converted["LoadingIcon"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["LoadingIcon"].BackgroundTransparency = 1
+Converted["LoadingIcon"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["LoadingIcon"].BorderSizePixel = 0
+Converted["LoadingIcon"].Position = UDim2.new(0.5, 0, 0.5, 50)
+Converted["LoadingIcon"].Size = UDim2.new(0, 50, 0, 50)
+Converted["LoadingIcon"].Name = "LoadingIcon"
+Converted["LoadingIcon"].Parent = Converted["TextLabel"]
+
+Converted["ImageLabel4"].Image = "rbxassetid://10980958752"
+Converted["ImageLabel4"].ScaleType = Enum.ScaleType.Crop
+Converted["ImageLabel4"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["ImageLabel4"].BackgroundTransparency = 1
+Converted["ImageLabel4"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["ImageLabel4"].BorderSizePixel = 0
+Converted["ImageLabel4"].Size = UDim2.new(1, 0, 1, 0)
+Converted["ImageLabel4"].ZIndex = 0
+Converted["ImageLabel4"].Parent = Converted["Load2"]
+
+Converted["UICorner10"].Parent = Converted["ImageLabel4"]
+
+
+local fakemodulescripts = {}
+
+
+
+local Load = Converted["Load2"]
+local Loader = Converted["Load"]
+local Select = Converted["Select"]
+local UpdatesButton = Converted["Updates"]
+local ProductsButton = Converted["Products"]
+local UpdatesTab = Converted["UpdatesTab"]
+local ProductsTab = Converted["ProductsTab"]
+local Selected = "Products"
+local ts = game:GetService("TweenService")
+local loading = true
+Load.Visible = true
+task.delay(1, function() loading = false end)
+while loading do 
+    task.wait()
+    Load.TextLabel.LoadingIcon.Rotation += 5
+end
+function TweenTransparency(component, length, endgoal)
+    if component:IsA("ImageLabel") then
+        ts:Create(component,TweenInfo.new(length, Enum.EasingStyle.Cubic),{ImageTransparency = endgoal}):Play()
+    elseif component:IsA("CanvasGroup") then
+        ts:Create(component,TweenInfo.new(length, Enum.EasingStyle.Cubic),{GroupTransparency = endgoal}):Play()
+    elseif component:IsA("TextLabel") then
+        ts:Create(component,TweenInfo.new(length, Enum.EasingStyle.Cubic),{TextTransparency = endgoal}):Play()
+    else
+        ts:Create(component,TweenInfo.new(length, Enum.EasingStyle.Cubic),{Transparency = endgoal}):Play()
+    end	
+end
+TweenTransparency(Load.TextLabel, 1, 1)
+TweenTransparency(Load.TextLabel.LoadingIcon, 1, 1)
+task.wait(0.5)
+Load:TweenSize(Converted["ScreenGui"].Select.Size, 2)
+Load:TweenPosition(Converted["ScreenGui"].Select.Position, 2)
+task.wait(2)
+Load.Visible = false
+Select.Visible = true
+TweenTransparency(Select.CanvasGroup, 1, 0)
+
+ProductsButton.Activated:Connect(function()
+    ProductsTab.Visible = true
+    ProductsButton.BackgroundTransparency = 0
+    UpdatesTab.Visible = false
+    UpdatesButton.BackgroundTransparency = 1
+    Converted["List1"].Visible = true
+    Loader.Visible = false
+end)
+UpdatesButton.Activated:Connect(function()
+    ProductsTab.Visible = false
+    ProductsButton.BackgroundTransparency = 1
+    UpdatesTab.Visible = true
+    UpdatesButton.BackgroundTransparency = 0
+end)
+local SelectedScript = ""
+for i, v in pairs(Converted["List1"]:GetChildren()) do 
+    if v.Name == "Script" then 
+        v.TextButton.Activated:Connect(function()
+            SelectedScript = v.Background.Label.Text
+            local desc = Descriptions[v.Background.Label.Text]
+            Loader.Visible = true
+            Converted["List1"].Visible = false
+            Loader.Description.Text = desc or "No Description."
+        end)  
+    end
+end
+Converted["TextButton3"].Activated:Connect(function()
+    Converted["TextLabel"].Text = "Loading Script..."
+    TweenTransparency(Select.CanvasGroup, 1, 1)
+    task.wait(1)
+    Load.Visible = true
+    Select.Visible = false
+    Load:TweenSize(UDim2.new(0, 500, 0, 200), 1)
+    Load:TweenPosition(Converted["ScreenGui"].Select.Position, 1)
+    task.wait(1)
+    TweenTransparency(Load.TextLabel, 1, 0)
+    TweenTransparency(Load.TextLabel.LoadingIcon, 1, 0)
+    loading = true
+    task.delay(3, function() loading = false end)
+    while loading do 
+        task.wait()
+        Load.TextLabel.LoadingIcon.Rotation += 5
+    end
+    TweenTransparency(Load, 1,1)
+    TweenTransparency(Load.ImageLabel, 1,1)
+    TweenTransparency(Load.UIStroke, 1,1)
+    TweenTransparency(Load.TextLabel, 1, 1)
+    TweenTransparency(Load.TextLabel.LoadingIcon, 1, 1)
+    if SelectedScript == "KIKI Hub : Lite" then 
+        script_key = getgenv().script_key
+        getgenv().solara_script_key = script_key;
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/67a90f4128d00a8b0f51cc1ba7a626bf.lua"))()
+    elseif SelectedScript == "KIKI Hub" then
+        script_key = getgenv().script_key
+        getgenv().solara_script_key = script_key;
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6d4abbab21aa0c8f128bbf8b07ad4e64.lua"))()
+    end
+end)
