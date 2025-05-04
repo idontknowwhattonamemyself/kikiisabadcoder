@@ -1,4 +1,4 @@
-function Load(scriptid)
+function LoadScript(scriptid)
 	queue_on_teleport([[
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/idontknowwhattonamemyself/kikiisabadcoder/refs/heads/Lua/loader"))()
 	]])
@@ -7,7 +7,7 @@ function Load(scriptid)
 	loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/"..scriptid..".lua"))()
 end
 if getgenv().AutoLoadScript then 
-	Load(getgenv().AutoLoadScript)
+	LoadScript(getgenv().AutoLoadScript)
 end
 
 
@@ -680,8 +680,8 @@ Converted["TextButton3"].Activated:Connect(function()
     TweenTransparency(Load.TextLabel, 1, 1)
     TweenTransparency(Load.TextLabel.LoadingIcon, 1, 1)
     if SelectedScript == "KIKI Hub : Lite" then 
-		Load("67a90f4128d00a8b0f51cc1ba7a626bf")
+		LoadScript("67a90f4128d00a8b0f51cc1ba7a626bf")
     elseif SelectedScript == "KIKI Hub" then
-		Load("6d4abbab21aa0c8f128bbf8b07ad4e64")
+		LoadScript("6d4abbab21aa0c8f128bbf8b07ad4e64")
     end
 end)
