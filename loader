@@ -20,11 +20,11 @@ local UpdatesText =
 local Descriptions = {}
 Descriptions["KIKI Hub"] = [[A simple general purpose cheat meant for progression/raging
 
-Features Include Fly, Basic ESP, Backattach/Killaura, Moderator/Illu Notifier, and Extra Exploits
-
-Made To Be Used On New Accounts, Not For Ganking
+Features Include Fly, Basic ESP, Backattach/Killaura, Moderator/Illu Notifier, Exploits such as Teleports, Perflora Teleport, and More
 ]]
+Descriptions["KIKI Hub : Lite"] = [[A PVP focused version of KIKI Hub
 
+Features Include Cooldown Indicators, Damage Indicators, Fall Damage Reduction, Etc.]]
 local Converted = {
 	["ScreenGui"] = Instance.new("ScreenGui");
 	["Select"] = Instance.new("Frame");
