@@ -7,7 +7,7 @@ function LoadScript(scriptid)
 	loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/"..scriptid..".lua"))()
 end
 if getgenv().AutoLoadScript then 
-	LoadScript(getgenv().AutoLoadScript)
+	-- LoadScript(getgenv().AutoLoadScript)
 end
 
 
