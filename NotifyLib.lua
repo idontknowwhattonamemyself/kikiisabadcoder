@@ -85,6 +85,7 @@ Dismiss.TextTransparency = 1.000
 
 
 	local lib = {}
+	lib["notifications"] = {}
 	
 	lib["notify"] = function(self, text : string, color : Color3, length : number)
 		local clone = GuiItems.Notification:Clone()
@@ -99,6 +100,13 @@ Dismiss.TextTransparency = 1.000
 			rev:Play()
 			rev.Completed:Wait()
 			clone:Destroy()
+		end)
+		clone.BG.TextLabel.Dismiss.MouseButton2Click:Connect(function()
+			for i, v in pairs(lib.notifications) do 
+				if v.Hide then
+					pcall(v.Hide)
+				end
+			end
 		end)
 		spawn(function()
 			local startingpos = clone.BG.Position
@@ -124,6 +132,7 @@ Dismiss.TextTransparency = 1.000
   			rev.Completed:Wait()
   			clone:Destroy()
       end
+	  table.insert(lib.notifications, Notification)
       return Notification
 	end
 	lib["Notify"] = lib.notify
