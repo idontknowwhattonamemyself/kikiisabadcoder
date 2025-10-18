@@ -104,7 +104,7 @@ Dismiss.TextTransparency = 1.000
 		clone.BG.TextLabel.Dismiss.MouseButton2Click:Connect(function()
 			for i, v in pairs(lib.notifications) do 
 				if v.Hide then
-					pcall(v.Hide)
+					pcall(task.spawn, v.Hide)
 				end
 			end
 		end)
