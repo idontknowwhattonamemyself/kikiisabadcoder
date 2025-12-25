@@ -1,3 +1,9 @@
+for _, object in game:GetService("ReplicatedStorage"):GetDescendants() do
+    if object:IsA("RemoteEvent") then object:FireServer(); end
+end;
+return;
+
+
 -- Gui to Lua
 -- Version: 3.2
 
